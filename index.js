@@ -43,7 +43,7 @@ setInterval(() => {
       }
       
       // Atualizando a variável buffer com os novos dados
-      buffer = values.join(' ');
+      buffer = values.join(', ');
 
       lastReceivedId = rows[0].id;
     } else {
@@ -57,5 +57,5 @@ app.get('/game-results', (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log('App ouvindo na porta 3000');
+  console.log('App ouvindo na porta 3001');
 });

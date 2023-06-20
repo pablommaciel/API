@@ -4,9 +4,9 @@ const app = express();
 
 const connection = mysql.createConnection({
   host: '185.239.210.154',
-  user: 'u625977176_XicoAviator',
-  password: 'Pp135198000',
-  database: 'u625977176_XicoAviator',
+  user: 'u625977176_pingolAviator',
+  password: 'Ppp135198000',
+  database: 'u625977176_pingolAviator',
   connectTimeout: 60000,
   charset: 'utf8mb4'
 });
@@ -53,7 +53,7 @@ setInterval(() => {
 }, 3000);  // Executa a cada 3 segundos
 
 app.get('/game-results', (req, res) => {
-  res.json({ results: buffer });
+  res.json({ results: `[` + buffer + `]`});
 });
 
 app.listen(3001, () => {

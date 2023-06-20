@@ -24,18 +24,18 @@ let lastReceivedId = null;
 let buffer = null;
 
 setInterval(() => {
-  console.log('Verificando atualizações...');
+  //console.log('Verificando atualizações...');
   connection.query('SELECT * FROM dragontiger ORDER BY ID DESC LIMIT 1', (err, rows) => {
     if(err) {
       console.error('Erro ao consultar o banco de dados: ', err);
       return;
     }
 
-    console.log('Dados recebidos do Banco de Dados.');
+    //console.log('Dados recebidos do Banco de Dados.');
 
     // Se é a primeira execução ou se o ID mudou
     if(lastReceivedId === null || rows[0].id !== lastReceivedId) {
-      console.log('Novos dados recebidos:');
+      //console.log('Novos dados recebidos:');
       
       let values = [];
       for (let key in rows[0]) {
@@ -47,7 +47,7 @@ setInterval(() => {
 
       lastReceivedId = rows[0].id;
     } else {
-      console.log('Nenhum novo dado recebido.');
+      //console.log('Nenhum novo dado recebido.');
     }
   });
 }, 3000);  // Executa a cada 3 segundos
